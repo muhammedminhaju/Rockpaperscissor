@@ -61,7 +61,6 @@ elif(u==3):
   u=l[2]  
 else:
  print("invalide Choice ,please enter the number 1 to 3") 
-# ind=l.index(c)+1
 ins2(c,u) 
 if(u==c):
   draw()

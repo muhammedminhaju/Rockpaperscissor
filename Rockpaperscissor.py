@@ -1,4 +1,6 @@
 import random as ra
+def final(p):
+  print("exit")
 def ins1():
   print("\n||---------------------||")
   print("||  Enter the numbers  ||")
@@ -53,39 +55,46 @@ p=[0,0]
 c=ra.choice(l)
 ins1()  
 u=int(input("||       select :-     ||=>"))
-if(u==1):
+while(True):
+ if(u==4):
+   final(p)
+   break
+ if(u==1):
   u=l[0]
-elif(u==2):
+ elif(u==2):
   u=l[1]
-elif(u==3):
+ elif(u==3):
   u=l[2]  
-else:
- print("invalide Choice ,please enter the number 1 to 3") 
-ins2(c,u) 
-if(u==c):
-  draw()
-  printd(p[0],p[1])
-elif(u==l[0] and c==l[1] )  :
+ else:
+  print("invalide Choice ,please enter the number 1 to 3 if you want to play countinous ") 
+ ins2(c,u) 
+ if(u==c):
+   draw()
+   printd(p[0],p[1])
+ elif(u==l[0] and c==l[1] )  :
   p[1]=p[1]+1
   cw()
   printd(p[0],p[1])
-elif(u==l[0] and c==l[2]) : 
+ elif(u==l[0] and c==l[2]) : 
   p[0]=p[0]+1
   uw()
   printd(p[0],p[1])
-elif(u==l[1] and c==l[0]) : 
+ elif(u==l[1] and c==l[0]) : 
   p[0]=p[0]+1
   uw() 
   printd(p[0],p[1])
-elif(u==l[1] and c==l[2]) : 
+ elif(u==l[1] and c==l[2]) : 
   p[1]=p[1]+1
   cw()
   printd(p[0],p[1])
-elif(u==l[2] and c==l[1]) : 
+ elif(u==l[2] and c==l[1]) : 
   p[0]=p[0]+1
   uw() 
   printd(p[0],p[1])
-elif(u==l[2] and c==l[0]) : 
+ elif(u==l[2] and c==l[0]) : 
   p[1]=p[1]+1
   cw() 
   printd(p[0],p[1])
+ c=ra.choice(l)
+ ins1()  
+ u=int(input("||       select :-     ||=>"))  

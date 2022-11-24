@@ -1,19 +1,58 @@
-import getpass
 import random as ra
+def ins1():
+  print("\n||---------------------||")
+  print("||  Enter the numbers  ||")
+  print("||---------------------||") 
+  print("||       1 :- Rock     ||")  
+  print("||       2 :- Paper    ||") 
+  print("||       3 :- Scissor  ||") 
+  print("||---------------------||") 
+def ins2(c,u):  
+  print("||---------------------||") 
+  ul=len(u)
+  cl=len(c)
+  if(ul==7):
+    usl=" "
+  elif(ul==4):
+    usl='    ' 
+  else:
+    usl="   " 
+  if(cl==7):
+    csl=" "
+  elif(cl==4):
+    csl='    ' 
+  else:
+    csl="   "   
+  print("||   user   :- {}{}||".format(u,usl))
+  print("|| computer :- {}{}||".format(c,csl))
+  print("||---------------------||")
 def printd(up,cp):
-  print("||-------point---------||")
+  print("||---------------------||")
+  print("||       point         ||")
+  print("||---------------------||")
   print("||   user  |  computer ||")
-  print("||    {}    |     {}     ||".format(up,cp))
-  print("||-+-+-+-+-+-+-+-+-+-+-||")
+  print("||---------------------||")
+  print("||         |           ||")
+  print("||    {}    |      {}    ||".format(up,cp))
+  print("||         |           ||")
+  print("||-+-+-+-+-+-+-+-+-+-+-||\n")
 def uw():
-  print("^^^^^user is win^^^^^^")  
+  print("||---------------------||") 
+  print("||     user is win     ||") 
+  print("||---------------------||") 
 def cw():
-  print("^^^^^computer is win^^^^^^")   
+  print("||---------------------||") 
+  print("||   computer is win   ||") 
+  print("||---------------------||")  
+def draw():
+  print("||---------------------||") 
+  print('||         Draw        ||')
+  print("||---------------------||") 
 l=['Rock','Paper','Scissor']
 p=[0,0]
-print("Enter the numbers \n 1 :- Rock\n 2 :- Paper \n 3 :- Scissor\n")
-u=int(input("select :- "))
-
+c=ra.choice(l)
+ins1()  
+u=int(input("||       select :-     ||=>"))
 if(u==1):
   u=l[0]
 elif(u==2):
@@ -21,12 +60,12 @@ elif(u==2):
 elif(u==3):
   u=l[2]  
 else:
-  print("invalide Choice ,please enter the number 1 to 3") 
-c=ra.choice(l)
+ print("invalide Choice ,please enter the number 1 to 3") 
 # ind=l.index(c)+1
-print("user     :- {}\ncomputer :- {}".format(u,c))
+ins2(c,u) 
 if(u==c):
-  print('Draw')
+  draw()
+  printd(p[0],p[1])
 elif(u==l[0] and c==l[1] )  :
   p[1]=p[1]+1
   cw()

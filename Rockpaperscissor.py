@@ -1,6 +1,27 @@
 import random as ra
-def final(p):
-  print("exit")
+def final(up,cp):
+  print("||---------------------||")
+  print("||        Exit         ||")
+  print("||---------------------||") 
+  printd(up,cp)
+  if(up>cp):
+   print("\n||=====================||")
+   print("||     Final Winer     ||")
+   print("||---------------------||") 
+   print("||   ***** USER *****  ||")
+   print("||=====================||") 
+  elif(cp>up) :
+   print("\n||=====================||")
+   print("||     Final Winer     ||")
+   print("||---------------------||") 
+   print("||  *** COMPUTER ***   ||")
+   print("||=====================||") 
+  else:
+   print("\n||=====================||")
+   print("||     Final Winer     ||")
+   print("||---------------------||") 
+   print("||  ***** Draw *****   ||")
+   print("||=====================||") 
 def ins1():
   print("\n||---------------------||")
   print("||  Enter the numbers  ||")
@@ -8,6 +29,7 @@ def ins1():
   print("||       1 :- Rock     ||")  
   print("||       2 :- Paper    ||") 
   print("||       3 :- Scissor  ||") 
+  print("||       4 :- Exit     ||")
   print("||---------------------||") 
 def ins2(c,u):  
   print("||---------------------||") 
@@ -57,7 +79,7 @@ ins1()
 u=int(input("||       select :-     ||=>"))
 while(True):
  if(u==4):
-   final(p)
+   final(p[0],p[1])
    break
  if(u==1):
   u=l[0]

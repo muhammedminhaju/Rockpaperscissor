@@ -1,4 +1,32 @@
 import random as ra
+def decision(c,u,p):
+ if(u==c):
+  draw()
+  printd(p[0],p[1])
+ elif(u==l[0] and c==l[1] )  :
+  p[1]=p[1]+1
+  cw()
+  printd(p[0],p[1])
+ elif(u==l[0] and c==l[2]) : 
+  p[0]=p[0]+1
+  uw()
+  printd(p[0],p[1])
+ elif(u==l[1] and c==l[0]) : 
+  p[0]=p[0]+1
+  uw() 
+  printd(p[0],p[1])
+ elif(u==l[1] and c==l[2]) : 
+  p[1]=p[1]+1
+  cw()
+  printd(p[0],p[1])
+ elif(u==l[2] and c==l[1]) : 
+  p[0]=p[0]+1
+  uw() 
+  printd(p[0],p[1])
+ elif(u==l[2] and c==l[0]) : 
+  p[1]=p[1]+1
+  cw() 
+  printd(p[0],p[1])
 def final(up,cp):
   print("||---------------------||")
   print("||        Exit         ||")
@@ -72,51 +100,31 @@ def draw():
   print("||---------------------||") 
   print('||         Draw        ||')
   print("||---------------------||") 
+def checkingandchanging(c,u,p):
+ if(u==1):
+  u=l[0]
+  return u
+ elif(u==2):
+  u=l[1]
+  return u
+ elif(u==3):
+  u=l[2]
+  return u  
+ else:
+  print("invalide Choice ,please enter the number 1 to 3 if you want to play countinous ")
+def ins11():
+ c=ra.choice(l)
+ ins1()  
+ u=int(input("||    user select :-   ||=>"))
+ return c,u
 l=['Rock','Paper','Scissor']
 p=[0,0]
-c=ra.choice(l)
-ins1()  
-u=int(input("||       select :-     ||=>"))
+c,u=ins11()
 while(True):
  if(u==4):
    final(p[0],p[1])
    break
- if(u==1):
-  u=l[0]
- elif(u==2):
-  u=l[1]
- elif(u==3):
-  u=l[2]  
- else:
-  print("invalide Choice ,please enter the number 1 to 3 if you want to play countinous ") 
+ u=checkingandchanging(c,u,p) 
  ins2(c,u) 
- if(u==c):
-   draw()
-   printd(p[0],p[1])
- elif(u==l[0] and c==l[1] )  :
-  p[1]=p[1]+1
-  cw()
-  printd(p[0],p[1])
- elif(u==l[0] and c==l[2]) : 
-  p[0]=p[0]+1
-  uw()
-  printd(p[0],p[1])
- elif(u==l[1] and c==l[0]) : 
-  p[0]=p[0]+1
-  uw() 
-  printd(p[0],p[1])
- elif(u==l[1] and c==l[2]) : 
-  p[1]=p[1]+1
-  cw()
-  printd(p[0],p[1])
- elif(u==l[2] and c==l[1]) : 
-  p[0]=p[0]+1
-  uw() 
-  printd(p[0],p[1])
- elif(u==l[2] and c==l[0]) : 
-  p[1]=p[1]+1
-  cw() 
-  printd(p[0],p[1])
- c=ra.choice(l)
- ins1()  
- u=int(input("||       select :-     ||=>"))  
+ decision(c,u,p)
+ c,u=ins11()
